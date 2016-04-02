@@ -2,7 +2,15 @@
 
 ##### Configuration
 
-Set ```dropbox-folder``` and ```dropbox-token``` in ```src/main/resources/config.yaml```.
+Set ```dropbox-folder``` and ```dropbox-token``` in
+```
+src/main/resources/config.yaml
+```
+
+##### Run
+```
+sbt run
+```
 
 ##### Example Requests
 
