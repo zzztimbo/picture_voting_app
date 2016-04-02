@@ -1,13 +1,13 @@
 package co.adhoclabs.controllers
 
-import co.adhoclabs.handlers.PictureHandler
+import co.adhoclabs.handlers.{PictureHandler, TextHandler}
 import com.twitter.finatra.http.Controller
 
 class EventController extends Controller {
   post("/event") { event: Event =>
     event match {
       case Event(_, payload) if event.isPicture() => PictureHandler(payload)
-      case Event(_, payload) if event.isText() => info("xxxxxxx text event")
+      case Event(_, payload) if event.isText() => TextHandler(payload)
     }
   }
 }

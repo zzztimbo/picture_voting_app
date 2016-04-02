@@ -9,12 +9,9 @@ class PictureHandler(val pictureFile: String) extends DropboxHandler {
   val endpoint: String = s"$saveEndpointUrl$folder/${generateName()}${pictureExtension}"
 
   def uploadPicture(): Unit = {
-    println(endpoint)
-    println(token)
-    val response = Http(endpoint)
+    Http(endpoint)
       .headers(Seq("Authorization" -> s"Bearer $token"))
       .postForm(Seq("url" -> pictureFile)).asString
-    println(response)
   }
 }
 

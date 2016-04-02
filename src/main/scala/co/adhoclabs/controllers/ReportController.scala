@@ -1,8 +1,13 @@
 package co.adhoclabs.controllers
 
-/**
-  * Created by tim on 4/1/2016.
-  */
-class ReportController {
+import co.adhoclabs.stateful.PictureVoteCounter
+import com.twitter.finagle.http.Request
+import com.twitter.finatra.http.Controller
+import rapture.json._
+import rapture.json.jsonBackends.jawn._
 
+class ReportController extends Controller {
+  get("/report") { request: Request =>
+    Json(PictureVoteCounter.getVotes).toString()
+  }
 }

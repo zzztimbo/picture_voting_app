@@ -14,9 +14,6 @@ class PictureVotingServer extends HttpServer {
   override def defaultFinatraHttpPort = ":9999"
 
   override def configureHttp(router: HttpRouter) {
-    val config = getClass.getResource("/config.yaml").getPath
-    info(config)
-    PictureHandler("https://s3.amazonaws.com/burner-mms/prod/bda7d5a3-d914-439c-9fa5-95800b0b8fa4.gif")
     router
       .filter[LoggingMDCFilter[Request, Response]]
       .filter[TraceIdMDCFilter[Request, Response]]

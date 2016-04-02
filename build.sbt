@@ -26,6 +26,8 @@ lazy val versions = new {
 
 libraryDependencies ++= Seq(
   "net.jcazevedo" %% "moultingyaml" % "0.2",
+  "org.scalaj" %% "scalaj-http" % "2.2.1",
+  "com.propensive" %% "rapture" % "2.0.0-M5",
 
   "com.twitter.finatra" %% "finatra-http" % versions.finatra,
   "com.twitter.finatra" %% "finatra-slf4j" % versions.finatra,

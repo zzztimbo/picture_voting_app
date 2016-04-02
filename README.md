@@ -1,5 +1,30 @@
-# Finatra Typesafe [Activator](https://www.typesafe.com/get-started) HTTP Server Seed Template
+# Picture Voting Application
 
-[![Build Status](https://secure.travis-ci.org/twitter/finatra-activator-seed.png?branch=master)](http://travis-ci.org/twitter/finatra-activator-seed?branch=master)
+##### Configuration
 
-A minimal [activator](https://www.typesafe.com/get-started) seed template for creating a Finatra v2.x HTTP server application.
+Set ```dropbox-folder``` and ```dropbox-token``` in ```src/main/resources/config.yaml```.
+
+##### Example Requests
+
+###### picture event
+```
+curl -i -X POST \
+   -H "Content-Type:application/json" \
+   -d \
+'{"type":"inboundMedia","payload":"http://i.giphy.com/Llhp3CviKCKWc.gif","fromNumber":"+12131234567","toNumber":"+16261234567"}' \
+ 'http://localhost:9999/event'
+```
+
+###### vote event
+```
+curl -i -X POST \
+   -H "Content-Type:application/json" \
+   -d \
+'{"type":"inboundText","payload":"huge-rain-9531.jpeg","fromNumber":"+12131234567","toNumber":"+16261234567"}' \
+ 'http://localhost:9999/event'
+```
+###### report
+```
+curl -i -X GET \
+ 'http://localhost:9999/report'
+```
