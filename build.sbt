@@ -1,5 +1,5 @@
-name := "activator-seed"
-organization := "com.example"
+name := "picture-voting-app"
+organization := "co.adhoclabs"
 
 version := "1.0.0-SNAPSHOT"
 
@@ -25,6 +25,8 @@ lazy val versions = new {
 }
 
 libraryDependencies ++= Seq(
+  "net.jcazevedo" %% "moultingyaml" % "0.2",
+
   "com.twitter.finatra" %% "finatra-http" % versions.finatra,
   "com.twitter.finatra" %% "finatra-slf4j" % versions.finatra,
   "ch.qos.logback" % "logback-classic" % versions.logback,
